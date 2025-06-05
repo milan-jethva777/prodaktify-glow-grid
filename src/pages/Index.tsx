@@ -3,6 +3,8 @@ import { useState } from "react";
 import ImageContainer from "@/components/ImageContainer";
 import UploadButton from "@/components/UploadButton";
 import GridOverlay from "@/components/GridOverlay";
+import AboutUs from "@/components/AboutUs";
+import ContactUs from "@/components/ContactUs";
 
 const Index = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -19,7 +21,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       <GridOverlay />
       
       {/* Header */}
@@ -50,12 +52,20 @@ const Index = () => {
         </div>
       </main>
 
+      {/* About Us Section */}
+      <AboutUs />
+
+      {/* Contact Us Section */}
+      <ContactUs />
+
       {/* Footer */}
-      <footer className="relative z-10 pb-8">
+      <footer className="relative z-10 py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-gray-600 text-sm">
-            Powered by advanced AI technology
-          </p>
+          <div className="border-t border-gray-800 pt-8">
+            <p className="text-gray-600 text-sm">
+              © 2024 Prodaktify. Powered by advanced AI technology.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

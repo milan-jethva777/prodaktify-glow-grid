@@ -29,12 +29,14 @@ const GridOverlay = () => {
         }}
       />
       
-      <style jsx>{`
-        @keyframes gridPulse {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 0.4; }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes gridPulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+          }
+        `}
+      </style>
     </div>
   );
 };
