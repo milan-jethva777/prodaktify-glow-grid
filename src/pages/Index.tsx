@@ -24,20 +24,37 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       <GridOverlay />
       
-      {/* Header */}
-      <header className="relative z-10 pt-8 pb-4">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-6xl font-bold text-center bg-gradient-to-r from-white via-green-400 to-emerald-500 bg-clip-text text-transparent">
+      {/* Navigation Header */}
+      <header className="relative z-10 py-6">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <div className="text-2xl font-bold bg-gradient-to-r from-white via-green-400 to-emerald-500 bg-clip-text text-transparent">
             Prodaktify
-          </h1>
-          <p className="text-center text-gray-400 mt-2 text-lg">
-            AI-Powered Image Generation
-          </p>
+          </div>
+          <nav className="flex space-x-8">
+            <a href="#about" className="text-gray-300 hover:text-green-400 transition-colors">About</a>
+            <a href="#features" className="text-gray-300 hover:text-green-400 transition-colors">Features</a>
+            <a href="#contact" className="text-gray-300 hover:text-green-400 transition-colors">Contact</a>
+            <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white transition-colors">
+              Get Started
+            </button>
+          </nav>
         </div>
       </header>
 
+      {/* Hero Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="container mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-green-400 to-emerald-500 bg-clip-text text-transparent">
+            Create AI product design for free
+          </h1>
+          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+            Transform your ideas into stunning product designs using advanced AI technology
+          </p>
+        </div>
+      </section>
+
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-200px)] px-6">
+      <main className="relative z-10 flex flex-col items-center justify-center px-6 pb-20">
         <div className="w-full max-w-4xl mx-auto space-y-8">
           {/* Image Container */}
           <ImageContainer image={uploadedImage} />
