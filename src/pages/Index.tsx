@@ -5,6 +5,7 @@ import UploadButton from "@/components/UploadButton";
 import GridOverlay from "@/components/GridOverlay";
 import AboutUs from "@/components/AboutUs";
 import ContactUs from "@/components/ContactUs";
+import { Linkedin, X } from "lucide-react";
 
 const Index = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -27,27 +28,32 @@ const Index = () => {
       {/* Navigation Header */}
       <header className="relative z-10 py-6">
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-white via-green-400 to-emerald-500 bg-clip-text text-transparent">
+          <div className="text-2xl font-bold text-white drop-shadow-lg">
             Prodaktify
           </div>
-          <nav className="flex space-x-8">
-            <a href="#about" className="text-gray-300 hover:text-green-400 transition-colors">About</a>
-            <a href="#features" className="text-gray-300 hover:text-green-400 transition-colors">Features</a>
-            <a href="#contact" className="text-gray-300 hover:text-green-400 transition-colors">Contact</a>
-            <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white transition-colors">
-              Get Started
-            </button>
-          </nav>
+          <div className="flex items-center space-x-6">
+            {/* Social Media Icons */}
+            <nav className="flex space-x-6">
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
+                <X size={20} />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </nav>
+            {/* Upload Button */}
+            <UploadButton onImageUpload={handleImageUpload} />
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative z-10 py-20 px-6">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-green-400 to-emerald-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
             Create AI product design for free
           </h1>
-          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto drop-shadow-lg">
             Transform your ideas into stunning product designs using advanced AI technology
           </p>
         </div>
@@ -59,13 +65,14 @@ const Index = () => {
           {/* Image Container */}
           <ImageContainer image={uploadedImage} />
           
-          {/* Upload Section */}
-          <div className="flex flex-col items-center space-y-4">
-            <UploadButton onImageUpload={handleImageUpload} />
-            <p className="text-gray-500 text-sm text-center max-w-md">
-              Upload your image to transform it with AI-powered enhancements
-            </p>
-          </div>
+          {/* Upload Section Info */}
+          {!uploadedImage && (
+            <div className="flex flex-col items-center space-y-4">
+              <p className="text-gray-400 text-sm text-center max-w-md">
+                Upload your image to transform it with AI-powered enhancements
+              </p>
+            </div>
+          )}
         </div>
       </main>
 
