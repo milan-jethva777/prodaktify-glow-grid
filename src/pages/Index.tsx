@@ -5,7 +5,7 @@ import UploadButton from "@/components/UploadButton";
 import GridOverlay from "@/components/GridOverlay";
 import AboutUs from "@/components/AboutUs";
 import ContactUs from "@/components/ContactUs";
-import { Linkedin, X } from "lucide-react";
+import { Linkedin, X, Instagram, Youtube } from "lucide-react";
 
 const Index = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -40,9 +40,13 @@ const Index = () => {
               <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
                 <Linkedin size={20} />
               </a>
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-green-400 transition-colors">
+                <Youtube size={20} />
+              </a>
             </nav>
-            {/* Upload Button */}
-            <UploadButton onImageUpload={handleImageUpload} />
           </div>
         </div>
       </header>
@@ -62,6 +66,11 @@ const Index = () => {
       {/* Main Content */}
       <main className="relative z-10 flex flex-col items-center justify-center px-6 pb-20">
         <div className="w-full max-w-4xl mx-auto space-y-8">
+          {/* Upload Button positioned above image container */}
+          <div className="flex justify-center">
+            <UploadButton onImageUpload={handleImageUpload} />
+          </div>
+          
           {/* Image Container */}
           <ImageContainer image={uploadedImage} />
           

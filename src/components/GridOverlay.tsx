@@ -10,11 +10,11 @@ const GridOverlay = () => {
             linear-gradient(rgba(34, 197, 94, 0.4) 1px, transparent 1px),
             linear-gradient(90deg, rgba(34, 197, 94, 0.4) 1px, transparent 1px)
           `,
-          backgroundSize: '80px 80px',
+          backgroundSize: '120px 120px',
           transform: 'perspective(800px) rotateX(75deg)',
           transformOrigin: 'center bottom',
           opacity: 0.8,
-          animation: 'smoothGridFlow 12s linear infinite'
+          animation: 'smoothGridFlow 20s linear infinite'
         }}
       />
       
@@ -26,11 +26,11 @@ const GridOverlay = () => {
             linear-gradient(rgba(34, 197, 94, 0.2) 1px, transparent 1px),
             linear-gradient(90deg, rgba(34, 197, 94, 0.2) 1px, transparent 1px)
           `,
-          backgroundSize: '40px 40px',
+          backgroundSize: '60px 60px',
           transform: 'perspective(600px) rotateX(70deg)',
           transformOrigin: 'center bottom',
           opacity: 0.6,
-          animation: 'smoothGridFlow 8s linear infinite reverse'
+          animation: 'smoothGridFlow 15s linear infinite reverse'
         }}
       />
       
@@ -41,14 +41,14 @@ const GridOverlay = () => {
           background: `repeating-linear-gradient(
             0deg,
             transparent,
-            transparent 78px,
-            rgba(34, 197, 94, 0.6) 79px,
-            rgba(34, 197, 94, 0.6) 80px
+            transparent 118px,
+            rgba(34, 197, 94, 0.6) 119px,
+            rgba(34, 197, 94, 0.6) 120px
           )`,
           transform: 'perspective(1000px) rotateX(80deg)',
           transformOrigin: 'center bottom',
           opacity: 0.7,
-          animation: 'smoothUpwardFlow 10s linear infinite'
+          animation: 'smoothUpwardFlow 18s linear infinite'
         }}
       />
       
@@ -59,14 +59,14 @@ const GridOverlay = () => {
           background: `repeating-linear-gradient(
             90deg,
             transparent,
-            transparent 78px,
-            rgba(34, 197, 94, 0.5) 79px,
-            rgba(34, 197, 94, 0.5) 80px
+            transparent 118px,
+            rgba(34, 197, 94, 0.5) 119px,
+            rgba(34, 197, 94, 0.5) 120px
           )`,
           transform: 'perspective(1000px) rotateX(80deg)',
           transformOrigin: 'center bottom',
           opacity: 0.5,
-          animation: 'smoothUpwardFlow 14s linear infinite'
+          animation: 'smoothUpwardFlow 25s linear infinite'
         }}
       />
       
@@ -80,8 +80,8 @@ const GridOverlay = () => {
             radial-gradient(circle at 60% 40%, rgba(34, 197, 94, 0.3) 1px, transparent 1px),
             radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.3) 1px, transparent 1px)
           `,
-          backgroundSize: '100px 100px, 150px 150px, 200px 200px, 250px 250px',
-          animation: 'particleFlow 15s linear infinite'
+          backgroundSize: '150px 150px, 200px 200px, 250px 250px, 300px 300px',
+          animation: 'particleFlow 20s linear infinite'
         }}
       />
       
@@ -113,7 +113,7 @@ const GridOverlay = () => {
               transparent 100%
             )
           `,
-          animation: 'glowPulse 4s ease-in-out infinite'
+          animation: 'glowPulse 6s ease-in-out infinite'
         }}
       />
       
@@ -124,7 +124,7 @@ const GridOverlay = () => {
               background-position: 0px 0px, 0px 0px;
             }
             100% { 
-              background-position: 0px -80px, -80px 0px;
+              background-position: 0px -120px, -120px 0px;
             }
           }
           
@@ -134,8 +134,8 @@ const GridOverlay = () => {
               transform: perspective(1000px) rotateX(80deg) translateZ(0px);
             }
             100% { 
-              background-position: 0px -160px;
-              transform: perspective(1000px) rotateX(80deg) translateZ(50px);
+              background-position: 0px -240px;
+              transform: perspective(1000px) rotateX(80deg) translateZ(100px);
             }
           }
           
@@ -148,7 +148,7 @@ const GridOverlay = () => {
               opacity: 1;
             }
             100% { 
-              transform: translateY(-200px) translateZ(100px);
+              transform: translateY(-300px) translateZ(150px);
               opacity: 0;
             }
           }
@@ -156,11 +156,11 @@ const GridOverlay = () => {
           @keyframes glowPulse {
             0%, 100% { 
               opacity: 1;
-              filter: blur(15px);
+              filter: blur(20px);
             }
             50% { 
               opacity: 0.7;
-              filter: blur(20px);
+              filter: blur(25px);
             }
           }
         `}
