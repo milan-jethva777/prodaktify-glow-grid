@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ImageContainer from "@/components/ImageContainer";
 import UploadButton from "@/components/UploadButton";
 import GridOverlay from "@/components/GridOverlay";
@@ -51,8 +51,8 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative z-10 py-20 px-6">
+      {/* Hero Section - Made taller to push content below fold */}
+      <section className="relative z-10 py-20 px-6 min-h-screen flex items-center">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
             Create AI product design for free
@@ -63,8 +63,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center px-6 pb-20">
+      {/* Main Content - Now positioned below the hero section */}
+      <main className="relative z-10 flex flex-col items-center justify-center px-6 pb-20 mt-20">
         <div className="w-full max-w-4xl mx-auto space-y-8">
           {/* Image Container (upload button is now inside ImageContainer) */}
           <ImageContainer image={uploadedImage} onImageUpload={handleImageUpload} />
