@@ -20,11 +20,11 @@ const UploadButton = ({ onImageUpload }: UploadButtonProps) => {
       {/* Button */}
       <button
         onClick={handleButtonClick}
-        className="relative px-6 py-2 bg-green-500 hover:bg-black border border-green-400/50 hover:border-green-400 rounded-lg text-white font-semibold text-sm transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center space-x-2 group"
+        className="relative px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 bg-green-500 hover:bg-black border border-green-400/50 hover:border-green-400 rounded-lg text-white font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center space-x-1.5 sm:space-x-2 group"
       >
         {/* Upload Icon */}
         <svg 
-          className="w-4 h-4 group-hover:animate-bounce" 
+          className="w-3 h-3 sm:w-4 sm:h-4 group-hover:animate-bounce" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
