@@ -1,18 +1,26 @@
 
+import UploadButton from "./UploadButton";
+
 interface ImageContainerProps {
   image: string | null;
+  onImageUpload: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const ImageContainer = ({ image }: ImageContainerProps) => {
+const ImageContainer = ({ image, onImageUpload }: ImageContainerProps) => {
   return (
     <div className="relative group">
       {/* Glow Effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
       
-      {/* Main Container */}
-      <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Main Container - Made more transparent with dark background */}
+      <div className="relative bg-black/70 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 min-h-[400px] md:min-h-[500px] flex flex-col items-center justify-center overflow-hidden">
+        {/* Upload button positioned inside container but above the image */}
+        <div className="w-full flex justify-center mb-6">
+          <UploadButton onImageUpload={onImageUpload} />
+        </div>
+        
         {image ? (
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full mt-4">
             <img 
               src={image} 
               alt="Uploaded content" 
@@ -22,7 +30,7 @@ const ImageContainer = ({ image }: ImageContainerProps) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg pointer-events-none"></div>
           </div>
         ) : (
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 mt-4">
             {/* Placeholder Icon */}
             <div className="mx-auto w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center mb-6">
               <svg 
@@ -44,7 +52,7 @@ const ImageContainer = ({ image }: ImageContainerProps) => {
               Your AI-Enhanced Image
             </h3>
             <p className="text-gray-500 max-w-md">
-              Upload an image below to see it transformed with cutting-edge AI technology
+              Upload an image above to see it transformed with cutting-edge AI technology
             </p>
             
             {/* Animated Dots */}

@@ -66,13 +66,8 @@ const Index = () => {
       {/* Main Content */}
       <main className="relative z-10 flex flex-col items-center justify-center px-6 pb-20">
         <div className="w-full max-w-4xl mx-auto space-y-8">
-          {/* Upload Button positioned above image container */}
-          <div className="flex justify-center">
-            <UploadButton onImageUpload={handleImageUpload} />
-          </div>
-          
-          {/* Image Container */}
-          <ImageContainer image={uploadedImage} />
+          {/* Image Container (upload button is now inside ImageContainer) */}
+          <ImageContainer image={uploadedImage} onImageUpload={handleImageUpload} />
           
           {/* Upload Section Info */}
           {!uploadedImage && (
